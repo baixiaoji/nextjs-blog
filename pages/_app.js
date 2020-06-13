@@ -1,3 +1,3 @@
 export default function App({Component, pageProps}) {
-    return <Component {...pageProps}></Component>
+    return <div className='app'><Component {...pageProps}></Component></div>
 }
