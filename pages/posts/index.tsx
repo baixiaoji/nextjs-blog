@@ -21,7 +21,7 @@ const PostsIndex: NextPage<Props> = (props) => {
 
 export default PostsIndex;
 
-// getStaticProps SSG 静态化
+// getStaticProps SSG 静态化   动态内容静态化
 export const getStaticProps: GetStaticProps = async () => {
     const posts = await getPosts()
 
