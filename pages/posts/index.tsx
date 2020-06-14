@@ -1,21 +1,34 @@
-import {NextPage} from "next";
+import {GetStaticProps, NextPage} from "next";
 import React from "react";
 import usePosts from "libs/hooks/usePosts";
+import {getPosts} from "../../libs/posts";
 
 
-
-const PostsIndex: NextPage = () => {
-    const {isLoading, isEmpty, posts} = usePosts();
+type Props = {
+    posts: Post[];
+}
+const PostsIndex: NextPage<Props> = (props) => {
+    const {posts} = props;
     return (
         <div>
             <h1>博客列表</h1>
             {
-                isLoading ? <div>加载中</div> :
-                    isEmpty ? <div>没有博客</div> :
-                    posts.map(p => <div key={p.id}>{p.id}</div>)
+                posts.map(p => <div key={p.id}>{p.id}</div>)
             }
         </div>
     )
 }
 
 export default PostsIndex;
+
+// getStaticProps SSG 静态化
+export const getStaticProps: GetStaticProps = async () => {
+    const posts = await getPosts()
+
+    return {
+        props: {
+            // 核心  页面中存在一个script标签中包含props数据
+            posts: JSON.parse(JSON.stringify(posts)),
+        }
+    }
+}

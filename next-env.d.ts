@@ -6,3 +6,8 @@ declare module "*.jpeg" {
     export default value;
 
 }
+type Post = {
+    id: string;
+    title: string;
+    date:string;
+}

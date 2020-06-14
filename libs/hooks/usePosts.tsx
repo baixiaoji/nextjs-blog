@@ -1,12 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-type Post = {
-    id: string;
-    title: string;
-    date:string;
-}
-
 const usePosts = () => {
     const [isLoading, setLoading] = useState(false);
     const [isEmpty, setEmpty] = useState(false);
