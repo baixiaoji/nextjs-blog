@@ -14,11 +14,13 @@
     "next": "9.4.4",
     "next-images": "^1.4.0",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "ua-parser-js": "^0.7.21"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/node": "^14.0.13",
+    "@types/ua-parser-js": "^0.7.33",
     "file-loader": "^6.0.0",
     "gray-matter": "^4.0.2",
     "typescript": "^3.9.5"
